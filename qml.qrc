@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>DropTile.qml</file>
+        <file>DockWindow.qml</file>
+        <file>DockWindowTest.qml</file>
+        <file>AddComponentToQml.js</file>
+        <file>PanelHolder.qml</file>
+        <file>PanelWrapper.qml</file>
+        <file>DraggableItemDropArea.qml</file>
+        <file>PanelHolderUndocked.qml</file>
+    </qresource>
+</RCC>

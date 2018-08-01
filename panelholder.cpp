@@ -1,6 +1,6 @@
 #include "panelholder.h"
 
-PanelHolder::PanelHolder()
+PanelHolder::PanelHolder(QObject *parent) : QObject(parent)
 {
 	
 }

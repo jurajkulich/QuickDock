@@ -2,11 +2,14 @@
 #define PANELHOLDER_H
 
 #include <QObject>
+#include <QQuickItem>
 
-class PanelHolder
+class PanelHolder : public QObject
 {
+		Q_OBJECT 
+		
 	public:
-		PanelHolder();
+		explicit PanelHolder(QObject *parent = nullptr);
 };
 
 #endif // PANELHOLDER_H
