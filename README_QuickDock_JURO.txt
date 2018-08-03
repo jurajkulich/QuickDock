@@ -12,6 +12,7 @@ Pouzit QML iba na zobrazenie objektov a vysielanie signalov a v C++ riadit logik
 Ak QML panel zaregistruje pohyb, odosleme signal do triedy ktora posunie ostatne prvky podla potreby
 
 Prepisat model tak aby panely kopiroval a nie destruoval, pripadne destruoval az po skoprovani
+https://qml.guide/data-models-deconstructed-part-2-qabstractlistmodel/
 
 
 Panely:
@@ -26,4 +27,5 @@ PanelHolderUndocked - PanelHolder s pridanou MouseArea
 
 AddComponentToQml - JS kod, implementacia vkladania qml suborov (Da sa prepisat aj do samotneho QML)
 
-
+Mozno uzitocne:
+http://agateau.com/2016/reordering-a-listview-via-dragndrop-1/
