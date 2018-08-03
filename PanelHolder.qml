@@ -12,7 +12,7 @@ Rectangle {
     
     property string type: "panel"
     
-    // pri vytvoreni sa pomocou JS prida panel
+    // pri vytvoreni sa pomocou JS prida panel podla property type ktoru zadavme pri vytvarani
     Component.onCompleted: {
         console.debug("onComplete AddComponent: " + type);
         if(type === "panel") {
@@ -20,4 +20,5 @@ Rectangle {
         }
         AddingScript.createPanel(type, panelHolder);
     }
+    
 }

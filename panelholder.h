@@ -10,6 +10,8 @@ class PanelHolder : public QObject
 		
 	public:
 		explicit PanelHolder(QObject *parent = nullptr);
+		
+	
 };
 
 #endif // PANELHOLDER_H

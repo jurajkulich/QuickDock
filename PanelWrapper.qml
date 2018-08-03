@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.3
 
 Item {
     id: rootPanelWrapper
-    
+        
     // obsahuje Item ktory sa priradi pri vytvarani delegate
     default property Item contentItem
     // obsahuje parenta contentu pri dragu
@@ -15,11 +15,13 @@ Item {
     // signal volame pri pohybe panelu v docku
     signal changePanelDockPosition(int from, int to)
     signal undockPanel(int undockIndex,int undockX, int undockY, string undockItem)
-    
+        
     // velkost je prisposobena obsahujucemu Itemu
     width: contentItem.width
     height: contentItem.height
     
+    Component.onDestruction: console.debug("rootPanelWrapper onDestroyed")
+        
     // priradeny item vlozime pod contentItemWrapper
     onContentItemChanged: {
         contentItem.parent = contentItemWrapper;
@@ -35,7 +37,7 @@ Item {
                    x: contentItem.width / 2
                    y: contentItem.height / 2
         }
-    
+            
         MouseArea {
             id: dragArea
             anchors.fill: parent
@@ -45,7 +47,7 @@ Item {
                 if(drag.active) {
                     console.debug("emitchangePanelDockPosition()");
                     console.debug("onRelased: " + mouseX + ":" + mouseY)
-                    // po dragovani spustime signal
+                    // po dragovani spustime signal na preusporiadanie prvkov
                     emitchangePanelDockPosition();
                 }
             }
@@ -111,8 +113,9 @@ Item {
        
        // ak panel potiahneme na plochu pre volny pohyb volame signal na oddokovanie
        if( dropArea === rootWindowDropArea) {
+           parent = rootWindowDropArea
            rootPanelWrapper.undockPanel(model.index, dragArea.mouseX, dragArea.mouseY, contentItemName);
-           contentItemWrapper.parent = rootWindowDropArea;
+//           contentItemWrapper.parent = rootWindowDropArea;
            return;
        }
 

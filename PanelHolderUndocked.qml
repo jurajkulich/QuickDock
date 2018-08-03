@@ -4,6 +4,7 @@ import QtQuick.Window 2.3
 
 import "AddComponentToQml.js" as AddingScript
 
+// panel mal povodne sluzit ako holder po oddokovani pretoze obsahuje MouseAreu narozidel od povodneho Holderu
 Rectangle {
     id: panelHolderUndocked
     visible: true

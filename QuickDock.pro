@@ -14,7 +14,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
  
 SOURCES += \
         main.cpp \
-    draggingwindow.cpp \
     dockwindow.cpp \
     dockwindowtest.cpp \
     panelholder.cpp
@@ -33,7 +32,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    draggingwindow.h \
     dockwindow.h \
     dockwindowtest.h \
     panelholder.h

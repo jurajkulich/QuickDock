@@ -6,7 +6,6 @@ import QtQml.Models 2.3
 
 import "AddComponentToQml.js" as AddingScript
 
-
 Window {
     id: rootWindow
     visible: true
@@ -31,6 +30,14 @@ Window {
                 anchors.fill: parent
                 
                 onEntered: console.debug("onEntered: rootWindowItem")
+                
+                states: State {
+                    when: rootWindowDropArea.containsDrag
+                    PropertyChanges {
+                        target: rootWindowItem
+                        color: "orange"
+                    }
+                }
             }
         }
         
@@ -98,11 +105,8 @@ Window {
                     
                     // tuto by bolo dobre dokoncit nejako normalne undock :(
                     onUndockPanel: { 
-                      
 //                        myModel.remove(undockIndex)
 //                        AddingScript.createPanel("PanelHolderUndocked", rootWindowItem, undockX, undockY, undockItem)
-                        
-//                        myModel.remove(undockIndex)
                         console.debug("onUndockPanel: " + undockItem)
                     }
                 }                      

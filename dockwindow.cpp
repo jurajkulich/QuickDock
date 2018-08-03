@@ -2,5 +2,6 @@
 
 DockWindow::DockWindow(QObject *parent) : QObject(parent)
 {
+	qDebug() << "PanelHolder()";
 }
  
